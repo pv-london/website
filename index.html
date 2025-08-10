@@ -1,0 +1,138 @@
+<!-- 
+	https://www.figma.com/color-palettes/pastel/
+	https://plotly.com/javascript/configuration-options/
+	https://plotly.com/javascript/reference/layout/
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src='https://cdn.plot.ly/plotly-3.0.1.min.js'></script>
+	<title>Where Your Money Goes</title>
+	<style>
+		body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #CFCFCF;
+            border-radius: 100px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px 20px 80px 20px;
+            width: 500px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-shadow: 0px 1px, 1px 0px, 1px 1px;
+        }
+        .item-label {
+            font-size: 14px;
+            display: flex;
+            align-items: flex-start;
+            padding: 15px 25px;
+        }
+        .item-color {
+            min-width: 14px;
+            min-height: 14px;
+            margin-right: 5px;
+            &.ms { background-color: #424658; }
+            &.mi { background-color: #C56B62; }
+            &.ad { background-color: #BABBB1; }
+            &.al { background-color: #6C739C; }
+            &.sa { background-color: #D9A69F; }
+            &.ou { background-color: #F0DAD5; }
+            &.re { background-color: #DEA785; }
+        }
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1>PARA ONDE VAI<br/>O SEU DÍZIMO</h1>
+	<div id='myDiv' class="pie-chart"></div>
+	<div class="item-label"><div class="item-color ms"></div><div><b>Ministérios & Suporte: 20%</b>
+		- Kingsman, Só Para Elas, Kids, Pre-Teens, Pulse, Suporte Social, Louvor, Eventos</div></div>
+	<div class="item-label"><div class="item-color mi"></div><div><b>Missões: 6%</b>
+		- </div></div>
+	<div class="item-label"><div class="item-color ad"></div><div><b>Administração: 7%</b>
+		- Contador, Seguros, Manutenção (água, café, etc)</div></div>
+	<div class="item-label"><div class="item-color al"></div><div><b>Aluguel: 19%</b>
+		- </div></div>
+	<div class="item-label"><div class="item-color sa"></div><div><b>Salários: 35%</b>
+		- </div></div>
+	<div class="item-label"><div class="item-color ou"></div><div><b>Gastos Gerais: 7%</b>
+		- Cartão/presente aniversário, visitantes lembrancinha, ventiladores, etc</div></div>
+	<div class="item-label"><div class="item-color re"></div><div><b>Reservas: 7%</b>
+		- Dinheiro reserva para emergências</div></div>
+</div>
+</body>
+<script>
+	var data = [{
+      values: [
+        35,
+        19,
+        7,
+        7,
+        6,
+        20,
+        7],
+      labels: [
+          'Salários',
+          'Aluguel',
+          'Gastos Gerais',
+          'Administração',
+          'Missões',
+          'Ministérios & Suporte',
+          'Reservas'],
+      marker: { colors: ["#D9A69F", "#6C739C", "#F0DAD5", "#BABBB1", "#C56B62", "#424658", "#DEA785"] },
+      domain: {column: 0},
+      texttemplate: "%{label}<br>%{percent:.0%}",
+      textinfo: "label+percent",
+      textposition: "outside",
+      automargin: true,
+	//   name: 'GHG Emissions',
+      hoverinfo: 'skip',
+      hole: .4,
+      type: 'pie'
+    }];
+
+    var config = {
+        displaylogo: false,
+        displayModeBar: false,
+    }
+
+    var layout = {
+      title: {
+    //     text: 'Global Emissions 1990-2011'
+      },
+      margin: {t: 0},
+      paper_bgcolor: "#CFCFCF",
+      plot_bgcolor: "#CFCFCF",
+      hoverinfo: 'skip',
+      annotations: [
+        {
+          font: {
+            size: 20
+          },
+          showarrow: false,
+          text: '',
+    //       x: 5.17,
+    //       y: 5.5
+        }
+      ],
+    //   height: 600,
+    //   width: 800,
+      showlegend: false,
+    //   grid: {rows: 1, columns: 1}
+    };
+
+    Plotly.newPlot('myDiv', data, layout, config);
+</script>
+</html>
