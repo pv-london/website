@@ -39,7 +39,12 @@
 			margin: 20px 0;
         }
         .c-container {
-        	padding: 0px 50px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+        }
+        .c-container-div {
+        	width: 600px;
         }
         .logo-wrap {
 			background-color: #fff;
@@ -109,88 +114,98 @@
 </header>
 <div class="container">
 	<div class="row">
-		<div class="col-lg-6 c-container">
-			<div class="chart-container">
-				<div class="chart-title">PARA ONDE VAI<br/>O SEU DÍZIMO</div>
-				<div id='myDiv' class="pie-chart"></div>
-				<div class="item-label">
-					<div class="item-color ev"></div>
-					<div>
-						<b>Eventos: 9%</b>
-						- Criando experiências envolventes de adoração que ajudam
-						você a se conectar com Deus e ter comunhão com o corpo de
-						Cristo - Kingsman, Só Para Elas, Café com o Pastor, etc.
+		<div class="col-lg-6">
+			<div class="c-container">
+				<div class="c-container-div">
+					<div class="chart-container">
+						<div class="chart-title">PARA ONDE VAI<br/>O SEU DÍZIMO</div>
+						<div id='myDiv' class="pie-chart"></div>
+						<div class="item-label">
+							<div class="item-color ev"></div>
+							<div>
+								<b>Eventos: 9%</b>
+								- Criando experiências envolventes de adoração que ajudam
+								você a se conectar com Deus e ter comunhão com o corpo de
+								Cristo - Kingsman, Só Para Elas, Café com o Pastor, etc.
+							</div>
+						</div>
+						<div class="item-label">
+							<div class="item-color mi"></div>
+							<div>
+								<b>Missões: 7%</b>
+								- Investindo em missões locais e globais, como o suporte para o
+								ministério Iglesia Evangélica Misión que espalha a mensagem de
+								Jesus entre comunidades muçulmanas na Espanha.
+							</div>
+						</div>
+						<div class="item-label">
+							<div class="item-color ss"></div>
+							<div>
+								<b>Assistência Social: 6%</b>
+								- Na Palavra Viva, assistência social significa andar
+								junto em família - oferecendo amor, conforto e
+								ajuda financeira - para que ninguém caminhe sozinho.
+							</div>
+						</div>
+						<div class="item-label">
+							<div class="item-color go"></div>
+							<div>
+								<b>Gastos Operacionais: 11%</b>
+								- Investindo em nossos ministérios. Mantendo e melhorando
+								nossas instalações para melhor servir a nossa comunidade,
+								como materiais gerais, equipamentos, limpeza, seguros,
+								contabilidade, etc.
+							</div>
+						</div>
+						<div class="item-label">
+							<div class="item-color al"></div>
+							<div>
+								<b>Aluguel: 19%</b>
+								- Cumprindo nossos compromissos financeiros para garantir
+								o nosso local de adoração e comunhão.
+							</div>
+						</div>
+						<div class="item-label">
+							<div class="item-color sp"></div>
+							<div>
+								<b>Suporte Pastoral: 37%</b>
+								- Nossos pastores servem com amor, compromisso e temor a Deus.
+								Nossas doações sustentam e fortalecem o chamado deles.
+							</div>
+						</div>
+						<div class="item-label">
+							<div class="item-color re"></div>
+							<div>
+								<b>Reservas: 5%</b>
+								- Visando nosso crescimento e compromissos financeiros.
+							</div>
+						</div>
+						<div class="chart-footer">
+							* Ano de 2025 *
+						</div>
 					</div>
-				</div>
-				<div class="item-label">
-					<div class="item-color mi"></div>
-					<div>
-						<b>Missões: 7%</b>
-						- Investindo em missões locais e globais, como o suporte para o
-						ministério Iglesia Evangélica Misión que espalha a mensagem de
-						Jesus entre comunidades muçulmanas na Espanha.
-					</div>
-				</div>
-				<div class="item-label">
-					<div class="item-color ss"></div>
-					<div>
-						<b>Assistência Social: 6%</b>
-						- Na Palavra Viva, assistência social significa andar
-						junto em família - oferecendo amor, conforto e
-						ajuda financeira - para que ninguém caminhe sozinho.
-					</div>
-				</div>
-				<div class="item-label">
-					<div class="item-color go"></div>
-					<div>
-						<b>Gastos Operacionais: 11%</b>
-						- Investindo em nossos ministérios. Mantendo e melhorando
-						nossas instalações para melhor servir a nossa comunidade,
-						como materiais gerais, equipamentos, limpeza, seguros,
-						contabilidade, etc.
-					</div>
-				</div>
-				<div class="item-label">
-					<div class="item-color al"></div>
-					<div>
-						<b>Aluguel: 19%</b>
-						- Cumprindo nossos compromissos financeiros para garantir
-						o nosso local de adoração e comunhão.
-					</div>
-				</div>
-				<div class="item-label">
-					<div class="item-color sp"></div>
-					<div>
-						<b>Suporte Pastoral: 37%</b>
-						- Nossos pastores servem com amor, compromisso e temor a Deus.
-						Nossas doações sustentam e fortalecem o chamado deles.
-					</div>
-				</div>
-				<div class="item-label">
-					<div class="item-color re"></div>
-					<div>
-						<b>Reservas: 5%</b>
-						- Visando nosso crescimento e compromissos financeiros.
-					</div>
-				</div>
-				<div class="chart-footer">
-					* Ano de 2025 *
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-6 c-container">
-			<h2>
-				JUNTE-SE A NÓS</br>E FAÇA A DIFERENÇA
-			</h2>
-			<div>
-				Seu apoio faz a diferença no amanhã! Cada contribuição não é só para manter as
-				luzes acesas — é para espalhar esperança, transformar vidas e mostrar à nossa communidade
-				como é o amor de Jesus em ação. Nenhum doação é pequena demais; quando damos juntos,
-				isso se torna algo poderoso. Vamos ser a geração que se levanta com mãos abertas e
-				corações abertos, confiando que Deus vai multiplicar o que entregamos. A sua generosidade
-				é mais que uma doação — é impacto, é propósito, é amor em movimento.
+		<div class="col-lg-6">
+			<div class="c-container">
+				<div class="c-container-div">
+					<div>
+						<h2>
+							JUNTE-SE A NÓS</br>E FAÇA A DIFERENÇA
+						</h2>
+						<div>
+							Seu apoio faz a diferença no amanhã! Cada contribuição não é só para manter as
+							luzes acesas — é para espalhar esperança, transformar vidas e mostrar à nossa communidade
+							como é o amor de Jesus em ação. Nenhum doação é pequena demais; quando damos juntos,
+							isso se torna algo poderoso. Vamos ser a geração que se levanta com mãos abertas e
+							corações abertos, confiando que Deus vai multiplicar o que entregamos. A sua generosidade
+							é mais que uma doação — é impacto, é propósito, é amor em movimento.
+						</div>
+						<div class="photos-container"><img class="photos" src="photos.png" alt="photos"></div>
+					</div>
+				</div>
 			</div>
-			<div class="photos-container"><img class="photos" src="photos.png" alt="photos"></div>
 		</div>
 	</div>
 </div>
@@ -230,7 +245,7 @@
           text: '',
         }
       ],
-      height: 400,
+      // height: 400,
       // width: 800,
       showlegend: false
     };
