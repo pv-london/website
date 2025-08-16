@@ -30,6 +30,16 @@
 			align-items: center;
 			margin-bottom: 50px;
         }
+        .logo-wrap {
+			background-color: #fff;
+			width: 95px;
+			height: 95px;
+			border-radius: 100px;
+			padding: 1px;
+        }
+        .logo {
+        	width: 100%;
+        }
         h1 {
 			text-align: center;
 			font-weight: bold;
@@ -47,18 +57,10 @@
         .c-container-div {
         	width: 600px;
         }
-        .logo-wrap {
-			background-color: #fff;
-			width: 95px;
-			height: 95px;
-			border-radius: 100px;
-			padding: 1px;
-        }
-        .logo {
-        	width: 100%;
-        }
         #myDiv {
         	margin-top: 50px;
+        	height: 100%;
+        	width: 100%;
         }
         .chart-container {
             background-color: #CFCFCF;
@@ -79,6 +81,7 @@
             min-width: 14px;
             min-height: 14px;
             margin-right: 5px;
+            margin-top: 5px;
             &.mi { background-color: #424658; }
             &.ev { background-color: #C56B62; }
             &.ss { background-color: #BABBB1; }
@@ -115,7 +118,9 @@
 				<div class="c-container-div">
 					<div class="chart-container">
 						<h1>PARA ONDE VAI<br/>O SEU DÍZIMO</h1>
-						<div id='myDiv' class="pie-chart"></div>
+						<div id='myDiv-d'>
+							<img class="logo" src="chart.png" alt="Palavra Viva Church">
+						</div>
 						<div class="item-label">
 							<div class="item-color ev"></div>
 							<div>
@@ -210,7 +215,7 @@
 	var config = {
         displaylogo: false,
         displayModeBar: false,
-        responsive: true,
+<!--        responsive: true,-->
     }
 
 	var data = [{
@@ -241,8 +246,9 @@
           text: '',
         }
       ],
-      // height: 400,
-      // width: 800,
+      autosize: true,
+<!--      height: 400,-->
+<!--      width: 400,-->
       showlegend: false
     };
 
