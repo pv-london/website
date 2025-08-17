@@ -86,13 +86,6 @@
             min-height: 16px;
             margin-right: 5px;
             margin-top: 5px;
-            &.mi { background-color: #424658; }
-            &.ev { background-color: #C56B62; }
-            &.ss { background-color: #BABBB1; }
-            &.go { background-color: #F0DAD5; }
-            &.al { background-color: #6C739C; }
-            &.sp { background-color: #D9A69F; }
-            &.re { background-color: #DEA785; }
         }
         .chart-footer {
             color: #808080;
@@ -126,36 +119,36 @@
 					<div id='chart-summary' style="width: 400px; height: 350px"></div>
 				</div>
 				<div class="item-label">
-					<div class="item-color ev"></div>
+					<div id="item-color-ev" class="item-color"></div>
 					<div>
-						<b>Eventos: 9%</b>
+						<b>Eventos: <span id="item-percentage-ev"></span>%</b>
 						- Criando experiências envolventes de adoração que ajudam
 						você a se conectar com Deus e ter comunhão com o corpo de
 						Cristo - Kingsman, Só Para Elas, Café com o Pastor, etc.
 					</div>
 				</div>
 				<div class="item-label">
-					<div class="item-color mi"></div>
+					<div id="item-color-mi" class="item-color"></div>
 					<div>
-						<b>Missões: 7%</b>
+						<b>Missões: <span id="item-percentage-mi"></span>%</b>
 						- Investindo em missões locais e globais, como o suporte para o
 						ministério Iglesia Evangélica Misión que espalha a mensagem de
 						Jesus entre comunidades muçulmanas na Espanha.
 					</div>
 				</div>
 				<div class="item-label">
-					<div class="item-color ss"></div>
+					<div id="item-color-as" class="item-color"></div>
 					<div>
-						<b>Assistência Social: 6%</b>
+						<b>Assistência Social: <span id="item-percentage-as"></span>%</b>
 						- Na Palavra Viva, assistência social significa andar
 						junto em família - oferecendo amor, conforto e
 						ajuda financeira - para que ninguém caminhe sozinho.
 					</div>
 				</div>
 				<div class="item-label">
-					<div class="item-color go"></div>
+					<div id="item-color-go" class="item-color"></div>
 					<div>
-						<b>Gastos Operacionais: 11%</b>
+						<b>Gastos Operacionais: <span id="item-percentage-go"></span>%</b>
 						- Investindo em nossos ministérios. Mantendo e melhorando
 						nossas instalações para melhor servir a nossa comunidade,
 						como materiais gerais, equipamentos, limpeza, seguros,
@@ -163,25 +156,25 @@
 					</div>
 				</div>
 				<div class="item-label">
-					<div class="item-color al"></div>
+					<div id="item-color-al" class="item-color"></div>
 					<div>
-						<b>Aluguel: 19%</b>
+						<b>Aluguel: <span id="item-percentage-al"></span>%</b>
 						- Cumprindo nossos compromissos financeiros para garantir
 						o nosso local de adoração e comunhão.
 					</div>
 				</div>
 				<div class="item-label">
-					<div class="item-color sp"></div>
+					<div id="item-color-sp" class="item-color"></div>
 					<div>
-						<b>Suporte Pastoral: 37%</b>
+						<b>Suporte Pastoral: <span id="item-percentage-sp"></span>%</b>
 						- Nossos pastores servem com amor, compromisso e temor a Deus.
 						Nossas doações sustentam e fortalecem o chamado deles.
 					</div>
 				</div>
 				<div class="item-label">
-					<div class="item-color re"></div>
+					<div id="item-color-re" class="item-color"></div>
 					<div>
-						<b>Reservas: 5%</b>
+						<b>Reservas: <span id="item-percentage-re"></span>%</b>
 						- Visando nosso crescimento e compromissos financeiros.
 					</div>
 				</div>
@@ -209,16 +202,35 @@
 	</div>
 </div>
 </body>
+</html>
 <script>
 	var config = {
         displaylogo: false,
         displayModeBar: false,
     }
 
+    var report = [
+    	[ 'sp', 'Suporte<br>Pastoral',    '#D9A69F', 37 ],
+    	[ 'al', 'Aluguel',                '#6C739C', 19 ],
+    	[ 'go', 'Gastos<br>Operacionais', '#F0DAD5', 16 ],
+    	[ 'ev', 'Eventos',                '#C56B62',  9 ],
+    	[ 'mi', 'Missões',                '#424658',  7 ],
+    	[ 'as', 'Assistência<br>Social',  '#BABBB1',  6 ],
+    	[ 're', 'Reservas',               '#DEA785',  5 ]
+    ];
+
+	report.forEach((item, index) => {
+		var eleColor = document.getElementById('item-color-' + item[0]);
+		eleColor.style.backgroundColor = item[2];
+
+		var elePercentage = document.getElementById('item-percentage-' + item[0]);
+		elePercentage.innerHTML = item[3];
+	});
+
 	var data = [{
-      	labels: [           'Suporte<br>Pastoral', 'Aluguel', 'Gastos<br>Operacionais', 'Assistência<br>Social', 'Eventos', 'Missões', 'Reservas' ],
-      	marker: { colors: [ "#D9A69F",          "#6C739C", "#F0DAD5",             "#BABBB1",        "#C56B62", "#424658", "#DEA785" ] },
-      	values: [           37,                 19,        16,                     6,                9,         7,         5],
+      	labels: report.map(item => item[1]),
+      	marker: { colors: report.map(item => item[2]) },
+      	values: report.map(item => item[3]),
       	domain: {column: 0},
       	texttemplate: "%{label}<br>%{percent:.0%}",
       	textinfo: "label+percent",
@@ -253,4 +265,3 @@
 
     Plotly.newPlot('chart-summary', data, layout, config);
 </script>
-</html>
