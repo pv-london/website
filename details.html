@@ -1,3 +1,7 @@
+<!--
+	https://www.chartjs.org/docs/latest/charts/area.html
+	https://www.figma.com/color-palettes/pastel/
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,36 +14,38 @@
 		body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f7f7f7;
             color: #333;
         }
 		.header {
             background-color: #000000;
             width: 100%;
-            height: 70px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             margin-bottom: 50px;
+
+            .container {
+            	height: 70px;
+        		display: flex;
+				align-items: center;
+				color: #fff;
+        	}
+			.name {
+				font-size: 26px;
+			}
         }
         .logo-wrap {
-            background-color: #fff;
-            width: 95px;
-            height: 95px;
-            border-radius: 100px;
-            padding: 1px;
+            width: 70px;
+            height: 70px;
+            margin-right: 10px;
         }
         .logo {
             width: 100%;
         }
         h1 {
         	text-align: center;
-        	margin: 60px 0 40px;
+        	margin: 0 0 40px;
         }
-        .container {
-            max-width: 800px;
-            color: #666666;
+        .inner-container {
+            display: flex;
+			justify-content: center;
         }
         .box-container {
             box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 10px;
@@ -97,66 +103,76 @@
 </head>
 <body>
 <header class="header">
-	<div class="logo-wrap">
-		<img class="logo" src="logo.png" alt="Palavra Viva Church">
+	<div class="container">
+		<div class="logo-wrap">
+			<img class="logo" src="logo.png" alt="Palavra Viva Church">
+		</div>
+		<div class="name">
+			<b>Palavra Viva</b> Church
+		</div>
 	</div>
 </header>
 <h1>Relatório Financeiro<br>2024/2025</h1>
 <div class="container">
-	<div class="row">
-		<div class="col-lg-6">
-			<div class="box-container entradas-saidas">
-				<div class="title">Entradas</div>
-				<div class="value entradas">£68,654.76</div>
-<!--				<div class="transactions">-->
-<!--					<div class="left">Transações</div>-->
-<!--					<div class="right"><b>10,450</b></div>-->
-<!--				</div>-->
-			</div>
-		</div>
-		<div class="col-lg-6">
-			<div class="box-container entradas-saidas">
-				<div class="title">Saídas</div>
-				<div class="value saidas">£64,372.86</div>
-<!--				<div class="transactions">-->
-<!--					<div class="left">Transações</div>-->
-<!--					<div class="right"><b>10,450</b></div>-->
-<!--				</div>-->
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="box-container chart-entradas-saidas-container">
-				<div class="title">Entradas e Saídas</div>
-				<canvas id="entradas-saidas"></canvas>
-			</div>
-		</div>
-	</div>
-	<div class="box-container spend-details">
-		<div class="title">Resumo de Saídas</div>
+	<div class="inner-container">
+		<div style="width: 800px;">
 		<div class="row">
 			<div class="col-lg-6">
-				<ul>
-					<li>Aluguel: <span>£11,000.00</span></li>
-					<li>Gastos Operacionais: <span>£10,528.28</span></li>
-					<li>Suporte Pastoral: <span>£22,057.60</span></li>
-					<li>Missões: <span>£3,338.63</span></li>
-					<li>Eventos: <span>£2,489.68</span></li>
-				</ul>
+				<div class="box-container entradas-saidas">
+					<div class="title">Entradas</div>
+					<div class="value entradas">£68,654.76</div>
+					<div class="transactions">
+						<div class="left">Média por mês</div>
+						<div class="right"><b>£5,820.82</b></div>
+					</div>
+				</div>
 			</div>
 			<div class="col-lg-6">
-				<ul>
-					<li>Suporte Social: <span>£6,250.00</span></li>
-					<li>Kingsman: <span>£2,316.63</span></li>
-					<li>Mulheres: <span>£1,294.13</span></li>
-					<li>Kids: <span>£1,611.42</span></li>
-					<li>Pulse: <span>£320.83</span></li>
-					<li>Louvor: <span>£1,202.70</span></li>
-					<li>Media: <span>£209.47</span></li>
-				</ul>
+				<div class="box-container entradas-saidas">
+					<div class="title">Saídas</div>
+					<div class="value saidas">£64,372.86</div>
+					<div class="transactions">
+						<div class="left">Média por mês</div>
+						<div class="right"><b>£5,445.24</b></div>
+					</div>
+				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="box-container chart-entradas-saidas-container">
+					<div class="title">Entradas e Saídas Mensais</div>
+					<canvas id="entradas-saidas"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="box-container spend-details">
+			<div class="title">Resumo de Saídas</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<ul>
+						<li>Aluguel: <span>£11,000.00</span></li>
+						<li>Gastos Operacionais: <span>£7,808.05</span></li>
+						<li>Suporte Pastoral: <span>£22,057.60</span></li>
+						<li>Missões: <span>£3,338.63</span></li>
+						<li>Eventos: <span>£2,489.68</span></li>
+						<li>Seguros: <span>£375.20</span></li>
+					</ul>
+				</div>
+				<div class="col-lg-6">
+					<ul>
+						<li>Suporte Social: <span>£6,250.00</span></li>
+						<li>Kingsman: <span>£2,316.63</span></li>
+						<li>Mulheres: <span>£1,294.13</span></li>
+						<li>Kids: <span>£1,611.42</span></li>
+						<li>Pulse: <span>£320.83</span></li>
+						<li>Louvor: <span>£1,202.70</span></li>
+						<li>Media: <span>£209.47</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 	</div>
 </div>
 </body>
