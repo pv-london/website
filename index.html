@@ -15,13 +15,9 @@
 	<link rel="stylesheet" href="main.css" as="style">
 	<title>Palavra Viva Church</title>
 	<style>
-		.body {
-			font-size: 22px;
-        }
         h1 {
             text-align: center;
             font-weight: bold;
-            text-shadow: 0px 1px, 1px 0px, 1px 1px;
         }
         h2 {
             font-weight: bold;
@@ -51,7 +47,7 @@
             align-items: center;
         }
         #chart-summary {
-            margin-top: 20px;
+            margin: 30px 0;
         }
         .item-label {
             font-size: 18px;
@@ -68,7 +64,7 @@
         .chart-footer {
             color: #808080;
             text-align: center;
-            margin-top: 30px;
+            margin-top: 20px;
             font-size: 16px;
         }
         .photos-container {
@@ -208,7 +204,7 @@
     	[ 'go', 'Gastos<br>Operacionais', '#F0DAD5', 16 ],
     	[ 'ev', 'Eventos',                '#C56B62',  9 ],
     	[ 'mi', 'Missões',                '#424658',  7 ],
-    	[ 'as', 'Assistência<br>Social',  '#BABBB1',  6 ],
+    	[ 'as', 'Assistência Social',  '#BABBB1',  6 ],
     	[ 're', 'Reservas',               '#DEA785',  5 ]
     ];
 
@@ -227,10 +223,10 @@
       	domain: {column: 0},
       	texttemplate: "%{label}<br>%{percent:.0%}",
       	textinfo: "label+percent",
-      	textposition: "outside",
+      	textposition: "inside",
       	automargin: true,
       	hoverinfo: 'skip',
-		hole: .4,
+		hole: 0.0,
 		type: 'pie'
     }];
 

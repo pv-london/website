@@ -1,10 +1,11 @@
 nav {
     margin-bottom: 30px;
 }
-.navbar-brand img {
+nav .navbar-brand img {
     border-radius: 50px;
     margin-right: 10px;
 }
-.body {
+.container.body {
     padding: 0 30px;
+    font-size: 20px
 }
