@@ -55,7 +55,7 @@
             padding: 20px 40px;
 
             .title {
-            	font-size: 14px;
+            	font-size: 16px;
             	padding-bottom: 10px;
             	text-align: left;
             	font-weight: bold;
@@ -103,6 +103,19 @@
 				color: #517891;
 			}
 		}
+		.q-and-a {
+			font-size: 14px;
+
+			.title {
+			}
+			.question {
+				font-weight: 600;
+				padding-top: 20px;
+			}
+			.answer {
+
+			}
+		}
 	</style>
 </head>
 <body>
@@ -120,67 +133,111 @@
 <div class="container">
 	<div class="inner-container">
 		<div style="width: 800px;">
-		<div class="row">
-			<div class="col-md-6">
-				<div class="box-container entradas-saidas">
-					<div class="title">Entradas</div>
-					<div class="value entradas">£70,435.88</div>
-					<div class="transactions">
-						<div class="left">Média por mês</div>
-						<div class="right"><b>£5,820.82</b></div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="box-container entradas-saidas">
-					<div class="title">Saídas</div>
-					<div class="value saidas">£66,153.98</div>
-					<div class="transactions">
-						<div class="left">Média por mês</div>
-						<div class="right"><b>£5,445.24</b></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="box-container chart-entradas-saidas-container">
-					<div class="title">Entradas e Saídas Mensais</div>
-					<canvas id="entradas-saidas"></canvas>
-				</div>
-			</div>
-		</div>
-		<div class="box-container spend-details">
-			<div class="title">Resumo de Saídas</div>
 			<div class="row">
 				<div class="col-md-6">
-					<div class="category">Gastos Gerais</div>
-					<ul>
-						<li>Suporte Pastoral: <span>£22,057.60</span></li>
-						<li>Aluguel: <span>£11,000.00</span></li>
-						<li>Gastos Operacionais: <span>£4,938.09</span></li>
-						<li>Contabilidade: <span>£2,869.96</span></li>
-						<li>Ofertas: <span>£3,200.00</span></li>
-						<li>Eventos: <span>£2,489.68</span></li>
-						<li>Seguros: <span>£375.20</span></li>
-					</ul>
+					<div class="box-container entradas-saidas">
+						<div class="title">Entradas</div>
+						<div class="value entradas">£70,435.88</div>
+						<div class="transactions">
+							<div class="left">Média por mês</div>
+							<div class="right"><b>£5,820.82</b></div>
+						</div>
+					</div>
 				</div>
 				<div class="col-md-6">
-					<div class="category">Ministérios & Departamentos</div>
-					<ul>
-						<li>Assistência Social: <span>£3,050.00</span></li>
-						<li>Missões: <span>£3,338.63</span></li>
-						<li>Kingsman: <span>£2,316.63</span></li>
-						<li>Mulheres: <span>£1,294.13</span></li>
-						<li>Kids & Pré-teens: <span>£1,611.42</span></li>
-						<li>Pulse: <span>£320.83</span></li>
-						<li>Louvor: <span>£1,202.70</span></li>
-						<li>Media: <span>£209.47</span></li>
-					</ul>
+					<div class="box-container entradas-saidas">
+						<div class="title">Saídas</div>
+						<div class="value saidas">£66,153.98</div>
+						<div class="transactions">
+							<div class="left">Média por mês</div>
+							<div class="right"><b>£5,445.24</b></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="box-container chart-entradas-saidas-container">
+						<div class="title">Entradas e Saídas Mensais</div>
+						<canvas id="entradas-saidas"></canvas>
+					</div>
+				</div>
+			</div>
+			<div class="box-container spend-details">
+				<div class="title">Resumo de Saídas</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="category">Gastos Gerais</div>
+						<ul>
+							<li>Suporte Pastoral: <span>£22,057.60</span></li>
+							<li>Aluguel: <span>£11,000.00</span></li>
+							<li>Gastos Operacionais: <span>£4,938.09</span></li>
+							<li>Contabilidade: <span>£2,869.96</span></li>
+							<li>Ofertas: <span>£3,200.00</span></li>
+							<li>Eventos: <span>£2,489.68</span></li>
+							<li>Seguros: <span>£375.20</span></li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<div class="category">Ministérios & Departamentos</div>
+						<ul>
+							<li>Assistência Social: <span>£3,050.00</span></li>
+							<li>Missões: <span>£3,338.63</span></li>
+							<li>Kingsman: <span>£2,316.63</span></li>
+							<li>Mulheres: <span>£1,294.13</span></li>
+							<li>Kids & Pré-teens: <span>£1,611.42</span></li>
+							<li>Pulse: <span>£320.83</span></li>
+							<li>Louvor: <span>£1,202.70</span></li>
+							<li>Media: <span>£209.47</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="box-container q-and-a">
+				<div class="title">Dúvidas Frequentes</div>
+
+				<div class="question">Como os gastos são controlados?</div>
+				<div class="answer">
+					Trabalhamos com base em um orçamento anual. Cada ministério e departamento tem necessidades
+					específicas, que variam conforme suas atividades, eventos e número de pessoas envolvidas. Por
+					isso, elaboramos um orçamento próprio para cada área, o que nos ajuda a planejar melhor e
+					garantir que os recursos sejam usados de forma responsável e eficiente.
+				</div>
+
+				<div class="question">A igreja tem alguma reserva financeira para emergências ou planos futuros?</div>
+				<div class="answer">
+					Todo organização deve sim ter uma reserva de emergência para garantir estabilidade diante de imprevistos,
+					como gastos urgentes. Esse fundo protege os ministérios e projetos sociais, evitando que parem por falta
+					de recursos. Além disso, traz tranquilidade na gestão e mostra responsabilidade com os recursos confiados
+					pelos membros, reforçando a transparência e o bom testemunho.
+				</div>
+
+				<div class="question">Alguma parte dos dízimos e ofertas é enviado para a Sede ou outras Filiais?</div>
+				<div class="answer">
+					A igreja de Cristo não deve caminhar de forma isolada, mas em comunhão com outras igrejas, o que pode
+					incluir supporte financeiro em momentos de necessidade. No momento, não enviamos recursos para Sede
+					nem para outras igrejas. Em caso de mudanças, a decisão será tomada junto ao Conselho da Igreja e
+					registrada com transparência no nosso "Resumo de Entradas e Saídas".
+				</div>
+
+				<div class="question">Por quê as saídas foram tão maiores que as entradas no final/início do ano?</div>
+				<div class="answer">
+					Essa é uma ótima pergunta. No final e início do ano temos muitos eventos especiais que fortalecem
+					a comunhão e nos aproxima de Deus. Esse também é um período festivo, onde muitos membros viajam
+					e acabam se ausentando, o que geralmente reduz a arrecadação. Por isso, as saídas podem ficar maiores
+					que as entradas. É sempre importante lembrarmos do nosso compromisso com a obra de Deus em todos os
+					momentos do ano.
+				</div>
+
+				<div class="question">E se eu tiver dúvidas ou quiser conhecer mais sobre as nossas finanças?</div>
+				<div class="answer">
+					Prezamos pela transparência em tudo o que fazemos e acreditamos que perguntas são sempre bem-vindas.
+					Em caso de dúvidas ou interesse em conhecer mais sobre as nossas finanças, estamos sempre
+					à disposição para esclarecer. Qualquer membro pode entrar em contato conosco por
+					<a href="mailto:contact@palavravivachurch.org.uk">e-mail</a>, e teremos prazer em prover mais informações.
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 </div>
 </body>
