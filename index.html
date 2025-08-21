@@ -1,18 +1,15 @@
-<!-- 
-	https://www.figma.com/color-palettes/pastel/
-	https://plotly.com/javascript/configuration-options/
-	https://plotly.com/javascript/reference/layout/
- -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+	<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+	<script src="scripts/render.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 	<script src='https://cdn.plot.ly/plotly-3.0.1.min.js'></script>
-	<link rel="stylesheet" href="main.css" as="style">
+	<link rel="stylesheet" href="styles/main.css" as="style">
 	<title>Palavra Viva Church</title>
 	<style>
 		h1 {
@@ -79,24 +76,7 @@
 	</style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<div class="container-md">
-		<a class="navbar-brand" href="/finance">
-			<img src="logo-w-bg.jpg" alt="Palavra Viva Church" width="35" height="35">
-			Palavra Viva Church
-		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-			<div class="navbar-nav ms-auto">
-				<a class="nav-link" href="/finance/details.html">Relatório Financeiro</a>
-				<a class="nav-link" href="/finance/donate.html">Faça uma Doação</a>
-				<a class="nav-link" href="mailto:contact@palavravivachurch.org.uk">Fale Conosco</a>
-			</div>
-		</div>
-	</div>
-</nav>
+<div id="header"></div>
 <div class="container body">
 	<div class="row">
 		<div class="col-lg-6">
@@ -185,13 +165,12 @@
 					corações abertos, confiando que Deus vai multiplicar o que entregamos. A sua generosidade
 					é mais que uma doação, é impacto, é propósito, é amor em movimento.
 				</div>
-				<div class="photos-container"><img class="photos" src="photos.png" alt="photos"></div>
+				<div class="photos-container"><img class="photos" src="images/photos.png" alt="photos"></div>
 			</div>
 		</div>
 	</div>
 </div>
-</body>
-</html>
+<div id="footer"></div>
 <script>
 	var config = {
         displaylogo: false,
@@ -204,7 +183,7 @@
     	[ 'go', 'Gastos<br>Operacionais', '#F0DAD5', 16 ],
     	[ 'ev', 'Eventos',                '#C56B62',  9 ],
     	[ 'mi', 'Missões',                '#424658',  7 ],
-    	[ 'as', 'Assistência Social',  '#BABBB1',  6 ],
+    	[ 'as', 'Assistência Social',     '#BABBB1',  6 ],
     	[ 're', 'Reservas',               '#DEA785',  5 ]
     ];
 
@@ -254,3 +233,8 @@
 
     Plotly.newPlot('chart-summary', data, layout, config);
 </script>
+<script>
+	renderTemplates({});
+</script>
+</body>
+</html>

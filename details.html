@@ -7,10 +7,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+	<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+	<script src="scripts/render.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-	<link rel="stylesheet" href="main.css" as="style">
+	<link rel="stylesheet" href="styles/main.css" as="style">
 	<title>Palavra Viva Church</title>
 	<style>
 		body {
@@ -93,24 +95,7 @@
 	</style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<div class="container-md">
-		<a class="navbar-brand" href="/finance">
-			<img src="logo-w-bg.jpg" alt="Palavra Viva Church" width="35" height="35">
-			Palavra Viva Church
-		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-			<div class="navbar-nav ms-auto">
-				<a class="nav-link" href="/finance/details.html">Relatório Financeiro</a>
-				<a class="nav-link" href="/finance/donate.html">Faça uma Doação</a>
-				<a class="nav-link" href="mailto:contact@palavravivachurch.org.uk">Fale Conosco</a>
-			</div>
-		</div>
-	</div>
-</nav>
+<div id="header"></div>
 <div class="container body">
 	<h1>Relatório Financeiro<br>2024/2025</h1>
 	<div class="inner-container">
@@ -149,17 +134,6 @@
 				<div class="title">Resumo de Saídas</div>
 				<div class="row">
 					<div class="col-md-6">
-						<div class="category">Gastos Gerais</div>
-						<ul>
-							<li>Aluguel: <span>£11,000.00</span></li>
-							<li>Gastos Operacionais: <span>£4,938.09</span></li>
-							<li>Contabilidade: <span>£2,869.96</span></li>
-							<li>Ofertas: <span>£3,200.00</span></li>
-							<li>Eventos: <span>£2,489.68</span></li>
-							<li>Seguros: <span>£375.20</span></li>
-						</ul>
-					</div>
-					<div class="col-md-6">
 						<div class="category">Ministérios & Departamentos</div>
 						<ul>
 							<li>Suporte Pastoral: <span>£22,057.60</span></li>
@@ -171,6 +145,17 @@
 							<li>Pulse: <span>£320.83</span></li>
 							<li>Louvor: <span>£1,202.70</span></li>
 							<li>Mídia: <span>£209.47</span></li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<div class="category">Gastos Gerais</div>
+						<ul>
+							<li>Aluguel: <span>£11,000.00</span></li>
+							<li>Gastos Operacionais: <span>£4,938.09</span></li>
+							<li>Contabilidade: <span>£2,869.96</span></li>
+							<li>Ofertas: <span>£3,200.00</span></li>
+							<li>Eventos: <span>£2,489.68</span></li>
+							<li>Seguros: <span>£375.20</span></li>
 						</ul>
 					</div>
 				</div>
@@ -222,6 +207,7 @@
 		</div>
 	</div>
 </div>
+<div id="footer"></div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
@@ -316,5 +302,8 @@
     		}
 		}
 	});
+</script>
+<script>
+	renderTemplates({});
 </script>
 </html>
