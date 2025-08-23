@@ -4,13 +4,15 @@ async function loadTemplate(url) {
 }
 
 async function renderTemplates(data) {
+    const name = "Palavra Viva Church";
+
   // Load templates
   const headerTpl = await loadTemplate('templates/header.hbs');
   const footerTpl = await loadTemplate('templates/footer.hbs');
 
   // Compile
   const headerHTML = Handlebars.compile(headerTpl)({ });
-  const footerHTML = Handlebars.compile(footerTpl)({ year: "2025", siteName: "Palavra Viva Church - Londres" });
+  const footerHTML = Handlebars.compile(footerTpl)({ year: "2025", siteName: name + " - Londres" });
 
   // Inject
   document.getElementById('header').innerHTML = headerHTML;
