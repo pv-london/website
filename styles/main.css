@@ -1,9 +1,19 @@
 nav {
     margin-bottom: 30px;
 }
+nav .navbar-brand {
+    display: inline-flex;
+    align-items: center;
+}
 nav .navbar-brand img {
     border-radius: 50px;
     margin-right: 10px;
+}
+nav .navbar-brand .name {
+    line-height: 16px;
+}
+nav .navbar-brand .name-location {
+    font-size: 14px;
 }
 .container.body {
     padding: 0 30px;

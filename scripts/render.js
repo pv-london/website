@@ -9,8 +9,8 @@ async function renderTemplates(data) {
   const footerTpl = await loadTemplate('templates/footer.hbs');
 
   // Compile
-  const headerHTML = Handlebars.compile(headerTpl)({ siteName: "Palavra Viva Church" });
-  const footerHTML = Handlebars.compile(footerTpl)({ year: "2025", siteName: "Palavra Viva Church" });
+  const headerHTML = Handlebars.compile(headerTpl)({ });
+  const footerHTML = Handlebars.compile(footerTpl)({ year: "2025", siteName: "Palavra Viva Church - Londres" });
 
   // Inject
   document.getElementById('header').innerHTML = headerHTML;
