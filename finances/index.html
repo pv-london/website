@@ -12,12 +12,6 @@
 	<link rel="stylesheet" href="/styles/main.css" as="style">
 	<title>Palavra Viva Church - Seu dízimo</title>
 	<style>
-		h1 {
-            font-weight: bold;
-        }
-        h2 {
-            margin: 20px 0;
-        }
         .col-lg-6 {
             padding-right: 0px;
             padding-left: 0px;
@@ -36,11 +30,6 @@
             margin: auto;
             margin-bottom: 60px;
         }
-        .chart-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
         #chart-summary {
             margin: 30px 0;
         }
@@ -58,14 +47,10 @@
         }
         .chart-footer {
             color: #808080;
-            text-align: center;
             margin-top: 20px;
             font-size: 16px;
         }
         .photos-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             margin-top: 60px;
         }
         .photos {
@@ -79,9 +64,9 @@
 	<div class="row">
 		<div class="col-lg-6">
 			<div class="gray-container">
-				<h1 class="text-center">PARA ONDE VAI<br/>O SEU DÍZIMO</h1>
-				<div class='chart-container'>
-					<div id='chart-summary' style="width: 330px; height: 350px"></div>
+				<h1 class="fw-bold text-center">PARA ONDE VAI<br/>O SEU DÍZIMO</h1>
+				<div class="chart-container d-flex justify-content-center align-items-center">
+					<div id="chart-summary" style="width: 330px; height: 350px"></div>
 				</div>
 				<div class="item-label">
 					<div id="item-color-ev" class="item-color"></div>
@@ -145,14 +130,14 @@
 						- Visando nosso crescimento e compromissos financeiros.
 					</div>
 				</div>
-				<div class="chart-footer">
+				<div class="chart-footer text-center">
 					* Ano de 2025 *
 				</div>
 			</div>
 		</div>
 		<div class="col-lg-6">
 			<div>
-				<h2>
+				<h2 class="my-4">
 					NENHUM DOAÇÃO<br>É PEQUENA DEMAIS
 				</h2>
 				<div>
@@ -163,7 +148,9 @@
 					corações abertos, confiando que Deus vai multiplicar o que entregamos. A sua generosidade
 					é mais que uma doação, é impacto, é propósito, é amor em movimento.
 				</div>
-				<div class="photos-container"><img class="photos" src="../images/photos.png" alt="photos"></div>
+				<div class="photos-container d-flex justify-content-center align-items-center">
+					<img class="photos" src="/images/photos.png" alt="photos">
+				</div>
 			</div>
 		</div>
 	</div>
