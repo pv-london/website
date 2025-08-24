@@ -29,8 +29,8 @@ async function renderTemplates(data) {
     const name = "Palavra Viva Church";
 
   // Load templates
-  const headerTpl = await loadTemplate('templates/header.hbs');
-  const footerTpl = await loadTemplate('templates/footer.hbs');
+  const headerTpl = await loadTemplate('/templates/header.hbs');
+  const footerTpl = await loadTemplate('/templates/footer.hbs');
 
   // Compile
   const headerHTML = Handlebars.compile(headerTpl)(data);
