@@ -1,8 +1,8 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-md">
-            <a class="navbar-brand" href="/finance">
-                <img src="images/logo-w-bg.jpg" alt="{{siteName}}" width="35" height="35" class="d-inline-block align-text-top">
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo-w-bg.jpg" alt="{{siteName}}" width="35" height="35" class="d-inline-block align-text-top">
                 <div class="name"><b>Palavra Viva</b> Church<br><span class="name-location">Londres</span></div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,9 +10,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link" href="/finance">Seu dízimo</a>
-                    <a class="nav-link" href="/finance/details.html">Relatório financeiro</a>
-                    <a class="nav-link" href="/finance/donate.html">Faça uma doação</a>
+                    {{#contains headers "finances"}}
+                        <a class="nav-link" href="/finances/index.html">Seu dízimo</a>
+                        <a class="nav-link" href="/finances/details.html">Relatório financeiro</a>
+                    {{/contains}}
+                    <a class="nav-link" href="/finances/donate.html">Faça uma doação</a>
                     <a class="nav-link" href="mailto:contact@palavravivachurch.org.uk">Fale conosco</a>
                 </div>
             </div>
