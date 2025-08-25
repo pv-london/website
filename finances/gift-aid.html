@@ -1,0 +1,114 @@
+<!--
+	https://www.chartjs.org/docs/latest/charts/area.html
+	https://www.figma.com/color-palettes/pastel/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+	<script src="/scripts/render.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="/styles/main.css" as="style">
+	<title>Palavra Viva Church - Gift Aid</title>
+	<style>
+		.container {
+			max-width: 500px
+		}
+	</style>
+</head>
+<body>
+<div id="header"></div>
+<div class="container">
+	<h1 class="text-center">
+		Declaração de Gift Aid
+	</h1>
+	<p class="m-4 text-center">
+		Aumente sua doação em 25p para cada £1 doado.
+	</p>
+
+	<form id="giftAidForm">
+		<div class="mb-3">
+			<label for="fullName" class="form-label">Nome</label>
+			<input type="text" id="fullName" name="entry.696015264" class="form-control" required>
+		</div>
+
+		<div class="mb-3">
+			<label for="email" class="form-label">Email</label>
+			<input type="text" id="email" name="entry.831959046" class="form-control" required>
+		</div>
+
+		<div class="mb-3">
+			<label for="address" class="form-label">Endereço</label>
+			<input type="text" id="address" name="entry.1353029617" class="form-control" required>
+		</div>
+
+		<div class="mb-3">
+			<label for="city" class="form-label">Cidade</label>
+			<input type="text" id="city" name="entry.1113941620" class="form-control" required>
+		</div>
+
+		<div class="mb-5">
+			<label for="postcode" class="form-label">Código postal</label>
+			<input type="text" id="postcode" name="entry.1753870541" class="form-control" required>
+		</div>
+
+		<div class="mb-5 form-check">
+			<input type="checkbox" id="declaration" name="entry.59552337" value="Yes" class="form-check-input" required>
+			<label class="form-check-label fs-6" for="declaration">
+				Por favor, solicite o Gift Aid sobre minhas doações para a Palavra Viva Church
+				(Caridade nº 1129415). Isso inclui todas as doações deste ano e dos quatro anos anteriores,
+				além de quaisquer doações futuras, a menos que eu notifique o contrário. Confirmo que sou
+				contribuinte do Reino Unido e paguei ou pagarei imposto de renda ou ganhos de capital
+				suficiente em cada ano fiscal para cobrir todo o imposto que será recuperado pela
+				instituição de caridade para os quais fiz doações
+				do Gift Aid em qualquer ano fiscal coberto por esta declaração. Entendo que sou responsável
+				pelo pagamento de qualquer déficit fiscal. Por favor, nos informe se algum de seus dados pessoais
+				mudar ou se você não pagar mais imposto suficiente sobre sua renda e/ou ganhos de capital.
+			</label>
+		</div>
+
+		<div class="mb-6 d-flex justify-content-center align-items-center">
+			<button type="submit" class="btn btn-dark">Enviar</button>
+		</div>
+	</form>
+
+	<div class="success" id="successMessage" style="display:none;">
+		✅ Obrigado! Sua declaração de Gift Aid foi enviada.
+	</div>
+</div>
+<div id="footer"></div>
+</body>
+<script>
+	document.getElementById('giftAidForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Replace with your Google Form "formResponse" URL
+      const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdCMFbSTM5sBT2Sn361AKJWNOpkLmRgr3vhwtPHbd3SxXUaaQ/formResponse";
+
+      // Collect form data
+      const formData = new FormData(this);
+
+      // Submit via fetch
+      fetch(formURL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+      })
+      .then(() => {
+        document.getElementById("giftAidForm").reset();
+        document.getElementById("successMessage").style.display = "block";
+      })
+      .catch((err) => {
+        alert("Something went wrong. Please try again.");
+        console.error(err);
+      });
+    });
+</script>
+<script>
+	renderTemplates({ headers: [ "finances" ] });
+</script>
+</html>
