@@ -25,18 +25,23 @@ async function loadTemplate(url) {
   return await res.text();
 }
 
+function isDevelopment() {
+    return location.hostname === "localhost"
+        || location.hostname === "127.0.0.1";
+}
+
 async function renderTemplates(data) {
     const name = "Palavra Viva Church";
 
-  // Load templates
-  const headerTpl = await loadTemplate('/templates/header.hbs');
-  const footerTpl = await loadTemplate('/templates/footer.hbs');
+    // Load templates
+    const headerTpl = await loadTemplate('/templates/header.hbs');
+    const footerTpl = await loadTemplate('/templates/footer.hbs');
 
-  // Compile
-  const headerHTML = Handlebars.compile(headerTpl)(data);
-  const footerHTML = Handlebars.compile(footerTpl)({ ...data, year: "2025", siteName: name + " - Londres" });
+    // Compile
+    const headerHTML = Handlebars.compile(headerTpl)({ ...data, root: isDevelopment() ? "/website" : "" });
+    const footerHTML = Handlebars.compile(footerTpl)({ ...data, year: "2025", siteName: name + " - Londres" });
 
-  // Inject
-  if (document.getElementById('header')) document.getElementById('header').innerHTML = headerHTML;
-  if (document.getElementById('footer')) document.getElementById('footer').innerHTML = footerHTML;
+    // Inject
+    if (document.getElementById('header')) document.getElementById('header').innerHTML = headerHTML;
+    if (document.getElementById('footer')) document.getElementById('footer').innerHTML = footerHTML;
 }
